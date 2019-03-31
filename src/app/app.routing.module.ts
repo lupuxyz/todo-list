@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TodoComponent } from './todo/todo.component';
+import { DetailComponent } from './detail/detail.component';
 import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
-  {path: 'todo', component: TodoComponent},
-  {path: 'about', loadChildren: './about/about.module#AboutModule'},
-  {path: '', redirectTo: '/todo', pathMatch: 'full'}
+  { path: 'todo', component: TodoComponent },
+  { path: 'todo/:id', component: DetailComponent },
+  { path: 'about', loadChildren: './about/about.module#AboutModule' },
+  { path: '', redirectTo: '/todo', pathMatch: 'full' }
 ];
 
 @NgModule({
